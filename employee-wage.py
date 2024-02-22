@@ -1,19 +1,24 @@
 import random 
+
+FULL_TIME_WAGE_PER_HR = 20
+FULL_DAY_HR = 8
+
 def emp_attendence():
     attendence = random.randint(0,1)
     if attendence == 1:
-        print("Employee is present")
+        return 1
     else:
-        print("Employee is not present")
+        return 0
+    
 def daily_employee_wage():
-    full_time_wage_per_hr = 20
-    full_day_hr = 8
 
-    if emp_attendence == 1:
-        daily_wage = full_time_wage_per_hr * full_day_hr
-        return "the daily wage for an full time employee is: {}".format(daily_wage)
+    if emp_attendence() == 1:
+        daily_wage = FULL_TIME_WAGE_PER_HR * FULL_DAY_HR
+        return "Employee is present for full time and the daily wage of the employee is {}".format(daily_wage)
     else:
-        return "the employee is not present"
+        return "The Employee is Absent and the daily wage is 0."
+    
+
 
 if __name__ == "__main__":
     print(daily_employee_wage())
