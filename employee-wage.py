@@ -26,7 +26,7 @@ def month_wage():
     total_hrs = 0
     total_days = 0
 
-    while total_hrs < MONTHLY_WORKING_HRS and total_days < MONTHLY_WORKING_DAYS:
+    while total_hrs < MONTHLY_WORKING_HRS or total_days < MONTHLY_WORKING_DAYS:
         attendance = emp_attendence()
         daily_wage = daily_employee_wage(attendance)
         montly_wage += daily_wage
